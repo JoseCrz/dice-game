@@ -1,9 +1,10 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,+CAA+C;EAC3D,MAAM,EAAE,KAAK;CAChB;;ACHD,AAAA,QAAQ,CAAC;EACL,UAAU,EAAE,KAAK;CACpB",
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,+CAA+C;EAC3D,MAAM,EAAE,KAAK;CAChB;;ACHD,AAAA,QAAQ,CAAC;EACL,UAAU,EAAE,KAAK;CACpB;;ACFD,AAAA,eAAe,CAAC;EACZ,UAAU,EAAE,OAAO;CACtB",
     "sources": [
         "style.scss",
-        "components/_board.scss"
+        "components/_board.scss",
+        "components/_player-panel.scss"
     ],
     "names": [],
     "file": "style.css"
