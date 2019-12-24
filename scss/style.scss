@@ -1,7 +1,10 @@
 body {
     background: linear-gradient(to top right, #009E00, #FFFF96);
     height: 100vh;
-    font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @import './components/board';

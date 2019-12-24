@@ -3,13 +3,63 @@ body {
   background: linear-gradient(to top right, #009E00, #FFFF96);
   height: 100vh;
   font-family: 'Lato', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .c-board {
   background: white;
+  width: 1000px;
 }
 
 .c-player-panel {
   background: #F6F6F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid gray;
+}
+
+.c-player-panel__name {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.c-player-panel__score {
+  font-size: 5em;
+  margin: 0;
+  color: #009E00;
+}
+
+.c-player-panel__current-box {
+  background: #009E00;
+  text-align: center;
+  padding: 0 30px;
+  color: white;
+  border-radius: 2px;
+}
+
+.c-player-panel__current-title {
+  text-transform: uppercase;
+}
+
+.c-player-panel__current-score {
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 /*# sourceMappingURL=style.css.map */
