@@ -25,7 +25,7 @@ body {
 }
 
 .c-player-panel {
-  background: #F6F6F6;
+  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,8 +36,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid gray;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 50%;
+}
+
+.c-player-panel--active {
+  background: #F6F6F6;
 }
 
 .c-player-panel__name {
@@ -46,7 +51,7 @@ body {
 }
 
 .c-player-panel__score {
-  font-size: 5em;
+  font-size: 6em;
   margin: 0;
   color: #009E00;
 }
