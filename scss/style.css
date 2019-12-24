@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  background: -webkit-gradient(linear, left bottom, right top, from(#009E00), to(#FFFF96));
+  background: linear-gradient(to top right, #009E00, #FFFF96);
+  height: 100vh;
+}
+
+.c-board {
+  background: white;
+}
+/*# sourceMappingURL=style.css.map */
