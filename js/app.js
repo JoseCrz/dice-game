@@ -1,11 +1,14 @@
-let scores, roundScore, activePlayer
+let scores, roundScore, activePlayer, winningScore
 const $buttonRoll = document.querySelector('#button-roll')
 const $buttonHold = document.querySelector('#button-hold')
 const $buttonNewGame = document.querySelector('#button-new-game')
+const $buttonScore = document.querySelector('#button-score')
+const $inputScore = document.querySelector('#input-score')
+const $textWinningScore = document.querySelector('#text-winning-score')
 const $dice = document.querySelector('#dice')
 const $playerPanels = document.querySelectorAll('.c-player-panel')
 
-startGame()
+
 
 // ? Roll button logic
 $buttonRoll.addEventListener('click', () => {
@@ -36,7 +39,7 @@ $buttonHold.addEventListener('click', () => {
     playerScore.textContent = scores[activePlayer]
     
     // 2. Check if player has reached winning score
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= winningScore) {
         // 2.1 true: Win game
         winGame(activePlayer)
     } else {
@@ -46,11 +49,26 @@ $buttonHold.addEventListener('click', () => {
 })
 
 // ? New Game Button
-$buttonNewGame.addEventListener('click', startGame)
+$buttonNewGame.addEventListener('click', preGame)
 
+// ? Set Score Button 
+$buttonScore.addEventListener('click', () => {
+    winningScore = parseInt($inputScore.value)
+    $inputScore.style.display = 'none'
+    $buttonScore.style.display = 'none'
+    startGame(winningScore)
+})
 // ? Utilitary functions
-function startGame () {
+
+function preGame () {
     // 1. Set every DOM element to it's initial state
+    $textWinningScore.textContent = `Winning Score:`
+    $buttonRoll.disabled = true
+    $buttonHold.disabled = true
+    $buttonRoll.style.opacity = '.5'
+    $buttonHold.style.opacity = '.5'
+    $inputScore.style.display = 'block'
+    $buttonScore.style.display = 'block'
     document.querySelector(`#name-0`).textContent = 'Player 1'
     document.querySelector(`#name-1`).textContent = 'Player 2'
     document.querySelector('#score-0').textContent = '0'
@@ -60,15 +78,19 @@ function startGame () {
     $playerPanels.forEach(panel => {
         panel.classList.remove('c-player-panel--active')
     })
+    // 1. Remove classes to avoid conflicts
+    $playerPanels[0].classList.add('c-player-panel--active')
+}
+
+function startGame (winningScore) {
+    $textWinningScore.textContent = `Winning Score: ${winningScore}`
     $buttonHold.disabled = false
     $buttonRoll.disabled = false
+    $buttonNewGame.disabled = false
     $buttonRoll.style.opacity = '1'
     $buttonHold.style.opacity = '1'
 
-    // 2. Remove classes to avoid conflicts
-    $playerPanels[0].classList.add('c-player-panel--active')
-
-    // 3. Set game variables to it's initial state
+    // 2. Set game variables to it's initial state
     roundScore = 0
     activePlayer = 0
     scores = [0, 0]
@@ -88,7 +110,7 @@ function nextPlayer () {
 function winGame (activePlayer) {
     // 1. Show winning message to player
     document.querySelector(`#name-${activePlayer}`).textContent = 'WINNER!'
-    
+
     // 2. Disable buttons
     $buttonRoll.disabled = true
     $buttonHold.disabled = true
