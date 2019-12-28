@@ -146,6 +146,10 @@ body {
   color: #009E00;
 }
 
+.c-controls__roll, .c-controls__hold {
+  opacity: .5;
+}
+
 .c-controls__dice {
   opacity: 0;
   width: 100px;
@@ -153,6 +157,36 @@ body {
           box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
   -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+}
+
+.c-controls__arranger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-controls__input {
+  background: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  width: 60%;
+}
+
+.c-controls__button {
+  margin-left: 3px;
+  background: #009E00;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  width: 25%;
+  text-align: center;
 }
 
 /**
