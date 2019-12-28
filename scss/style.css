@@ -75,6 +75,8 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 50%;
+  -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
 }
 
 .c-player-panel--active {
@@ -131,6 +133,7 @@ body {
 .c-controls__new-game, .c-controls__roll, .c-controls__hold {
   background: transparent;
   border: none;
+  outline: none;
   text-transform: uppercase;
   font-size: 1.2em;
   letter-spacing: 1px;
@@ -148,8 +151,8 @@ body {
   width: 100px;
   -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
-  -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
-  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+  -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
 }
 
 /**

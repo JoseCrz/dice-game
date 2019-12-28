@@ -5,22 +5,23 @@
     align-items: center;
     justify-content: space-around;
     width: 50%;
-
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .2s;
+    
     &--active {
         background: #F6F6F6;
     }
-
+    
     &__name {
         font-size: 3em;
         margin-bottom: 0;
     }
-
+    
     &__score {
         font-size: 6em;
         margin: 0;
         color: #009E00;
     }
-
+    
     &__current-box {
         background: #009E00;
         text-align: center;
@@ -28,7 +29,7 @@
         color: white;
         border-radius: 2px;
     }
-
+    
     &__current-title {
         text-transform: uppercase;
     }
