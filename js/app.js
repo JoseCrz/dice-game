@@ -1,4 +1,4 @@
-let scores, roundScore, activePlayer, winningScore
+let scores, roundScore, activePlayer, winningScore, prevRoll
 const $buttonRoll = document.querySelector('#button-roll')
 const $buttonHold = document.querySelector('#button-hold')
 const $buttonNewGame = document.querySelector('#button-new-game')
@@ -23,8 +23,16 @@ $buttonRoll.addEventListener('click', () => {
     // 3. Update the round score IF the rolled is different from 1
     if (diceValue !== 1) {
         // 3.1 true: Add dice value to current round score
-        roundScore += diceValue
-        document.querySelector(`#current-${activePlayer}`).textContent = roundScore
+        if ( diceValue === 6 && prevRoll === 6) {
+            scores[activePlayer] = 0
+            const playerScore = document.querySelector(`#score-${activePlayer}`)
+            playerScore.textContent = scores[activePlayer]
+            nextPlayer()
+        } else {
+            prevRoll = diceValue
+            roundScore += diceValue
+            document.querySelector(`#current-${activePlayer}`).textContent = roundScore
+        }
     } else {
         // 3.2 false: Next player's turn
         nextPlayer()
