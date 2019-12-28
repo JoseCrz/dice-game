@@ -37,8 +37,8 @@ $buttonHold.addEventListener('click', () => {
     
     // 2. Check if player has reached winning score
     if (scores[activePlayer] >= 100) {
-        // 2.1 true: Display winning message to player
-        document.querySelector(`#name-${activePlayer}`).textContent = 'WINNER!'
+        // 2.1 true: Win game
+        winGame(activePlayer)
     } else {
         // 2.2 false: Next player's turn
         nextPlayer()
@@ -50,7 +50,7 @@ $buttonNewGame.addEventListener('click', startGame)
 
 // ? Utilitary functions
 function startGame () {
-    // 1. Set every text to it's initial state
+    // 1. Set every DOM element to it's initial state
     document.querySelector(`#name-0`).textContent = 'Player 1'
     document.querySelector(`#name-1`).textContent = 'Player 2'
     document.querySelector('#score-0').textContent = '0'
@@ -60,6 +60,10 @@ function startGame () {
     $playerPanels.forEach(panel => {
         panel.classList.remove('c-player-panel--active')
     })
+    $buttonHold.disabled = false
+    $buttonRoll.disabled = false
+    $buttonRoll.style.opacity = '1'
+    $buttonHold.style.opacity = '1'
 
     // 2. Remove classes to avoid conflicts
     $playerPanels[0].classList.add('c-player-panel--active')
@@ -79,5 +83,16 @@ function nextPlayer () {
     $playerPanels.forEach(panel => {
          panel.classList.toggle('c-player-panel--active')
     })
+}
+
+function winGame (activePlayer) {
+    // 1. Show winning message to player
+    document.querySelector(`#name-${activePlayer}`).textContent = 'WINNER!'
+    
+    // 2. Disable buttons
+    $buttonRoll.disabled = true
+    $buttonHold.disabled = true
+    $buttonRoll.style.opacity = '.5'
+    $buttonHold.style.opacity = '.5'
 }
 
