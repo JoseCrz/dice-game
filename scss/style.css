@@ -144,9 +144,12 @@ body {
 }
 
 .c-controls__dice {
+  opacity: 0;
   width: 100px;
   -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+  -webkit-transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
 }
 
 /**

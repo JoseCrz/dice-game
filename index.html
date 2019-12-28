@@ -11,27 +11,28 @@
 <body>
     <main class="c-board">
         <section class="c-player-panel c-player-panel--active">
-            <p class="c-player-panel__name">Player 1</p>
-            <p class="c-player-panel__score">42</p>
+            <p class="c-player-panel__name" id="name-0">Player 1</p>
+            <p class="c-player-panel__score" id="score-0">42</p>
             <div class="c-player-panel__current-box">
                 <p class="c-player-panel__current-title">Current</p>
-                <p class="c-player-panel__current-score">12</p>
+                <p class="c-player-panel__current-score" id="current-0">12</p>
             </div>
         </section>
         <section class="c-player-panel">
-            <p class="c-player-panel__name">Player 2</p>
-            <p class="c-player-panel__score">17</p>
+            <p class="c-player-panel__name" id="name-1">Player 2</p>
+            <p class="c-player-panel__score" id="score-1">17</p>
             <div class="c-player-panel__current-box">
                 <p class="c-player-panel__current-title">Current</p>
-                <p class="c-player-panel__current-score">20</p>
+                <p class="c-player-panel__current-score" id="current-1">20</p>
             </div>
         </section>
         <section class="c-controls">
             <button class="c-controls__new-game"><i class="c-controls__icon icon-plus"></i> New Game</button>
-            <img class="c-controls__dice" src="./img/dice-1.png" alt="Dice">
-            <button class="c-controls__roll"><i class="c-controls__icon icon-loop2"></i> Roll Dice</button>
+            <img class="c-controls__dice" id="dice" src="./img/dice-1.png" alt="Dice">
+            <button class="c-controls__roll" id="button-roll"><i class="c-controls__icon icon-loop2"></i> Roll Dice</button>
             <button class="c-controls__hold"> <i class="c-controls__icon icon-arrow-down2"></i> Hold</button>
         </section>
     </main>
+    <script src="./js/app.js"></script>
 </body>
 </html>
