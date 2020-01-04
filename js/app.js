@@ -18,7 +18,7 @@ $buttonRoll.addEventListener('click', () => {
 
     // 2. Display the result
     $dice.style.opacity = '1'
-    $dice.src = `../img/dice-${diceValue}.png`
+    $dice.src = `./img/dice-${diceValue}.png`
 
     // 3. Update the round score IF the rolled is different from 1
     if (diceValue !== 1) {
